@@ -1,5 +1,8 @@
+* {
+    color: white !important;
+}
 
-/* Carosello: transizione gestita anche da JS per loop perfetto */
+/* Carosello */
 .carousel-track {
     will-change: transform;
 }
@@ -58,7 +61,6 @@
 html{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: black;
-    font: white;
     overflow-x: hidden;
 }
 body{
@@ -84,7 +86,6 @@ body{
 }
 .nav-link{
     text-decoration: none;
-    color: white;
     font-size: 18px;
 }
 .nav-link:hover{
@@ -108,15 +109,6 @@ body{
     width: 35px;
     height: auto;
 }
-.About{
-    color: white;
-}
-.testo{
-    color: white;
-}
-.Tony-Krueger{
-    color: white;
-}
 .footer{
     color: white;
     height: 60px;
@@ -125,17 +117,12 @@ body{
     width:85.75px;
     height:auto;
 }
-.letswork{
-    color: white;
-}
+
 .menu:hover{
     cursor: pointer;
     transform: rotate(-90deg); 
 }
-.paragrafo-3{
-    color: white;
-}
-.works{
-    color: white;
-}
+
+
+
 

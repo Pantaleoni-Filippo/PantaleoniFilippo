@@ -4,6 +4,9 @@
     <title>Esercitazione One</title>
     <meta charset="utf-8">
 
+    <!--favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/logo_tk.png">
+
     <!-- bootstrap grid -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css">
 
@@ -25,7 +28,7 @@
     <!-- Header -->
     <div class="row header d-flex">
         <div class="col-1 col-lg-1 align-items-center mt-2">
-            <a href="#top" id="logo-top-link"><img src="imgs/logobianco.png" class="logo" style="cursor:pointer;"></a>
+            <a href="#top" id="logo-top-link" style="cursor: pointer; display: inline-block; width: fit-content;"><img src="imgs/logo_tk.png" class="logo mx-3 mx-lg-4" style="pointer-events: none;"></a>
         </div>
 
         <div class="d-none offset-lg-7 justify-content-end align-items-center d-lg-flex col-4 col-lg-4">
@@ -40,12 +43,12 @@
                     <a href="#works" class="nav-link">*Works.</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#letswork" class="nav-link">*LetsWork.</a>
+                    <a href="#letswork" class="nav-link">*Let'sWork.</a>
                 </li>
             </ul>
         </div>
 
-        <div class="d-flex d-lg-none col align-items-center mx-3 justify-content-end">
+        <div class="d-flex d-lg-none col align-items-center mx-1 justify-content-end">
             <img src="imgs/menu.png" class="menu">
         </div>
     </div> <!-- /row header -->
@@ -69,9 +72,9 @@
         </div>
         <div class="col-12 col-lg-5 d-flex testo justify-content-center align-items-center offset-lg-1 px-5 mb-4 mb-lg-5 px-lg-0 paragrafo-1">
             <p>
-                Nasco il 29 Giugno del 2004 a Rimini, famosa località balneare.<br>
-                Fin da piccolo ho percepito la vicinanza al mare come un vero e proprio privilegio: <br>
-                è un orizzonte che non stanca mai, una costante che accompagna ogni stagione della mia vita.<br>
+                Nasco il 29 Giugno del 2004 a Rimini, famosa località balneare.
+                Fin da piccolo ho percepito la vicinanza al mare come un vero e proprio privilegio:
+                è un orizzonte che non stanca mai, una costante che accompagna ogni stagione della mia vita.
                 Sono fortemente convinto che la presenza di questo elemento naturale favorisca in maniera notevolmente positiva non solo ciò che riguarda il processo creativo, bensì la qualità della vita dei suoi abitanti.<br>
                 Il mio primo approccio al mondo del design avvenne nel 2022 quando, quasi per gioco, decisi di scaricare la versione di prova di Photoshop:
                 da quell'esperienza è nata una crescente passione per la comunicazione grafica, cosa che mi ha spinto ad intraprendere questo percorso.
@@ -84,15 +87,15 @@
         <div class="col-12 col-lg-12 mb-5 mb-lg-5">
         <img src="imgs/IMG_2218.png" class="img-2">
         </div>
-                <div class="col-12 col-lg-12 d-flex testo justify-content-center align-items-center  px-5 mb-4 mb-lg-5 px-lg-0 paragrafo-1.2">
+        <div class="col-12 col-lg-12 d-flex testo justify-content-center align-items-center px-5 mb-4 mb-lg-5 px-lg-0 paragrafo-1.2">
             <div class="w-100 mb-4">
                 <p class="col-lg-8 align-items-lg-center justify-content-lg-center offset-lg-2" style="margin-bottom:2rem;">
                     Crescere a Rimini ha significato vivere con il mare come riferimento quotidiano, una presenza capace di modellare il mio modo di osservare e immaginare.<br>
-                    Ogni estate lavoro come bagnino, passare così tante ore sulla spiaggia, immerso nell’orizzonte e nel suo movimento continuo, ha influenzato profondamente il mio approccio al design:La calma del mattino, la forza dei giorni di vento, lo spazio aperto, ma mai vuoto sono elementi che ritornano nella mia idea di composizione grafica ed equilibrio visivo.
+                    Ogni estate lavoro come bagnino, passare così tante ore sulla spiaggia, immerso nell’orizzonte e nel suo movimento continuo, ha influenzato profondamente il mio approccio al design: la calma del mattino, la forza dei giorni di vento, lo spazio aperto, ma mai vuoto sono elementi che ritornano nella mia idea di composizione grafica ed equilibrio visivo.
                     Talvolta porto con me la fotocamera mentre lavoro, mi piace catturare scorci dell’ambiente, momenti spontanei delle persone e attimi quotidiani dei miei colleghi: un archivio visivo che arricchisce i miei processi creativi.<br>
                     Il mare, così, diventa anche un luogo di documentazione oltre che di ispirazione.
                 </p>
-                <div class="row justify-content-center align-items-e g-3 mb-2" style="margin-top:1.5rem;">
+                <div class="row justify-content-center align-items-center g-3 mb-2" style="margin-top:1.5rem;">
                     <div class="col-6 col-lg-3"><img src="imgs/slideshow_5.png" class="img-fluid" style="max-height:220px; object-fit:cover; width:100%;" alt="Foto 1"></div>
                     <div class="col-6 col-lg-3"><img src="imgs/slideshow_6.png" class="img-fluid" style="max-height:220px; object-fit:cover; width:100%;" alt="Foto 2"></div>
                     <div class="col-6 col-lg-3"><img src="imgs/slideshow_7.png" class="img-fluid" style="max-height:220px; object-fit:cover; width:100%;" alt="Foto 3"></div>
@@ -196,7 +199,7 @@
     <div class="row footer align-items-center justify-content-center">
         <div class="col-5 col-lg-5 align-items-center justify-content-start">
             <div class="d-flex">
-                <img src="imgs/logobianco.png" class="logofooter">
+                <img src="imgs/logo_tk.png" class="logofooter">
             </div>
         </div>
 
@@ -285,8 +288,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 // Logo cliccabile: scrolla in cima
-document.addEventListener('DOMContentLoaded', function() {
-    var logoLink = document.getElementById('logo-top-link');
+window.addEventListener('DOMContentLoaded', function() {
+    const logoLink = document.getElementById('logo-top-link');
     if (logoLink) {
         logoLink.addEventListener('click', function(e) {
             e.preventDefault();
@@ -357,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function() {
         gap: 2rem;
     `;
 
-    const links = ['About.', 'TonyKrueger.', 'Works.', 'LetsWork.'];
+    const links = ['About.', 'TonyKrueger.', 'Works.', "Let'sWork."];
     const hrefs = ['#about', '#tonykrueger', '#works', '#letswork'];
 
     links.forEach((text, index) => {
@@ -465,7 +468,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 </body>
-
-
-
 </html>
