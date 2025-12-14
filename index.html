@@ -26,9 +26,11 @@
 <div class="container-fluid p-0 m-0 g-0">
 
     <!-- Header -->
-    <div class="row header d-flex">
+    <div class="row header d-flex" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" style="cursor: pointer;">
         <div class="col-1 col-lg-1 align-items-center mt-2">
-            <a href="#top" id="logo-top-link" style="cursor: pointer; display: inline-block; width: fit-content;"><img src="imgs/logo_tk.png" class="logo mx-3 mx-lg-4" style="pointer-events: none;"></a>
+            <a href="#top" id="logo-top-link" style="cursor: pointer; display: block;">
+                <img src="imgs/logo_tk.png" class="logo mx-3 mx-lg-4" style="pointer-events: none;">
+            </a>
         </div>
 
         <div class="d-none offset-lg-7 justify-content-end align-items-center d-lg-flex col-4 col-lg-4">
@@ -465,6 +467,50 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll smooth globale
     document.documentElement.style.scrollBehavior = 'smooth';
 });
+// Ottimizzazione carosello per Safari
+function optimizeCarousel(selector, speedPxPerFrame) {
+    const track = document.querySelector(selector);
+    if (!track) return;
+
+    const imgs = Array.from(track.children);
+    imgs.forEach(img => {
+        const clone = img.cloneNode(true);
+        track.appendChild(clone);
+    });
+
+    let totalWidth = 0;
+    function calcTotalWidth() {
+        totalWidth = 0;
+        for (let i = 0; i < track.children.length / 2; i++) {
+            totalWidth += track.children[i].offsetWidth;
+        }
+    }
+    calcTotalWidth();
+    window.addEventListener('resize', calcTotalWidth);
+
+    let pos = 0;
+    function animate() {
+        pos -= speedPxPerFrame;
+        if (Math.abs(pos) >= totalWidth) {
+            track.style.transition = 'none';
+            pos = 0;
+            track.style.transform = `translateX(${pos}px)`;
+            void track.offsetWidth;
+        }
+        track.style.transition = 'transform 0.02s linear';
+        track.style.transform = `translateX(${pos}px)`;
+        requestAnimationFrame(animate);
+    }
+
+    setTimeout(() => {
+        calcTotalWidth();
+        animate();
+    }, 200);
+}
+
+// Applicazione ottimizzazione
+optimizeCarousel('.carousel-poster', 0.05);
+optimizeCarousel('.carousel-flyers', 0.05)  ;
 </script>
 
 </body>
