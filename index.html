@@ -467,50 +467,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll smooth globale
     document.documentElement.style.scrollBehavior = 'smooth';
 });
-// Ottimizzazione carosello per Safari
-function optimizeCarousel(selector, speedPxPerFrame) {
-    const track = document.querySelector(selector);
-    if (!track) return;
-
-    const imgs = Array.from(track.children);
-    imgs.forEach(img => {
-        const clone = img.cloneNode(true);
-        track.appendChild(clone);
-    });
-
-    let totalWidth = 0;
-    function calcTotalWidth() {
-        totalWidth = 0;
-        for (let i = 0; i < track.children.length / 2; i++) {
-            totalWidth += track.children[i].offsetWidth;
-        }
-    }
-    calcTotalWidth();
-    window.addEventListener('resize', calcTotalWidth);
-
-    let pos = 0;
-    function animate() {
-        pos -= speedPxPerFrame;
-        if (Math.abs(pos) >= totalWidth) {
-            track.style.transition = 'none';
-            pos = 0;
-            track.style.transform = `translateX(${pos}px)`;
-            void track.offsetWidth;
-        }
-        track.style.transition = 'transform 0.02s linear';
-        track.style.transform = `translateX(${pos}px)`;
-        requestAnimationFrame(animate);
-    }
-
-    setTimeout(() => {
-        calcTotalWidth();
-        animate();
-    }, 200);
-}
-
-// Applicazione ottimizzazione
-optimizeCarousel('.carousel-poster', 0.05);
-optimizeCarousel('.carousel-flyers', 0.05)  ;
 </script>
 
 </body>
